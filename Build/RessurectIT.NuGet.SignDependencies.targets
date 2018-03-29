@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <PropertyGroup>
+        <StrongNameKeyPath  Condition="'$(StrongNameKeyPath)' == ''">$(AssemblyOriginatorKeyFile)</StrongNameKeyPath>
+    </PropertyGroup>
+
+    <Target Name="SignNuGetDependencies" BeforeTargets="PrepareForBuild">
+        <Message Text="Trying to sign nuget dependencies without strong name"/>
+
+        <Exec Command="powershell -ExecutionPolicy Bypass &quot;$(SignScriptPath)&quot; -projectAssetsPath '$(ProjectAssetsPath)' -projectDependencies '@(PackageReference)' -dependencies '$(DependenciesFullPath)' -transitiveDependencies '$(TransitiveDependenciesNames)' -strongNameKeyPath '$(StrongNameKeyPath)' -ilAsmPath '$(IlAsmPath)' -ilDasmPath '$(IlDasmPath)'"/>
+    </Target>
+</Project>

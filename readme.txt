@@ -1,0 +1,1 @@
+﻿Package used for easier and automatic signing unsigned assemblies with strong name that are coming from NuGet

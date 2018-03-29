@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>RessurectIT.NuGet.SignDependencies</id>
+        <version>1.0.0</version>
+        <authors>kukjevov</authors>
+        <owners>RessurectIT</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Package used for easier and automatic signing unsigned assemblies with strong name that are coming from NuGet</description>
+        
+        <releaseNotes>
+            - first version that is automatically working for .net core msbuild projects, can be setup manually for older msbuild projects
+        </releaseNotes>
+
+        <copyright>RessurectIT 2018. All rights reserved.</copyright>
+        <tags>NuGet Signing Dependencies</tags>
+    </metadata>
+
+    <files>
+        <file src="Build\RessurectIT.NuGet.SignDependencies.targets" target="build" />
+        <file src="Build\RessurectIT.NuGet.SignDependencies.props" target="build" />
+        <file src="Build\RessurectIT.NuGet.SignDependencies.targets" target="buildCrossTargeting" />
+        <file src="Build\RessurectIT.NuGet.SignDependencies.props" target="buildCrossTargeting" />
+        <file src="InternalTools\signDependencies.ps1" target="internalTools" />
+        <file src="readme.txt" target="" />
+    </files>
+</package>
