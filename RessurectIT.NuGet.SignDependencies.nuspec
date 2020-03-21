@@ -3,14 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>RessurectIT.NuGet.SignDependencies</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <authors>kukjevov</authors>
         <owners>RessurectIT</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Package used for easier and automatic signing unsigned assemblies with strong name that are coming from NuGet</description>
         
         <releaseNotes>
-            - first version that is automatically working for .net core msbuild projects, can be setup manually for older msbuild projects
+            - fixed problem with spaces in paths
         </releaseNotes>
 
         <copyright>RessurectIT 2018. All rights reserved.</copyright>

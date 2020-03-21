@@ -7,6 +7,6 @@
     <Target Name="SignNuGetDependencies" BeforeTargets="PrepareForBuild">
         <Message Text="Trying to sign nuget dependencies without strong name"/>
 
-        <Exec Command="powershell -ExecutionPolicy Bypass &quot;$(SignScriptPath)&quot; -projectAssetsPath '$(ProjectAssetsPath)' -projectDependencies '@(PackageReference)' -dependencies '$(DependenciesFullPath)' -transitiveDependencies '$(TransitiveDependenciesNames)' -strongNameKeyPath '$(StrongNameKeyPath)' -ilAsmPath '$(IlAsmPath)' -ilDasmPath '$(IlDasmPath)'"/>
+        <Exec Command="powershell -ExecutionPolicy Bypass -File &quot;$(SignScriptPath)&quot; -projectAssetsPath &quot;$(ProjectAssetsPath)&quot; -projectDependencies &quot;@(PackageReference)&quot; -dependencies &quot;$(DependenciesFullPath)&quot; -transitiveDependencies &quot;$(TransitiveDependenciesNames)&quot; -strongNameKeyPath &quot;$(StrongNameKeyPath)&quot; -ilAsmPath &quot;$(IlAsmPath)&quot; -ilDasmPath &quot;$(IlDasmPath)&quot;"/>
     </Target>
 </Project>
